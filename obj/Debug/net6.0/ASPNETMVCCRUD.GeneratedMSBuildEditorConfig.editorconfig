@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Ham\source\repos\ASPNETMVCCRUD\ASPNETMVCCRUD
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Ham/source/repos/ASPNETMVCCRUD/ASPNETMVCCRUD/Views/Employees/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ham/source/repos/ASPNETMVCCRUD/ASPNETMVCCRUD/Views/Employees/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ham/source/repos/ASPNETMVCCRUD/ASPNETMVCCRUD/Views/Employees/View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ham/source/repos/ASPNETMVCCRUD/ASPNETMVCCRUD/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
