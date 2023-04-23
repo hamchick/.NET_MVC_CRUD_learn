@@ -48,12 +48,61 @@ namespace ASPNETMVCCRUD.Controllers
         }
 
         [HttpGet]
-        public IActionResult View(Guid id)
+        public async Task<IActionResult> View(Guid id)
         {
-            var employee = mvcdemoDbContext.Employees.FirstOrDefaultAsync(x => x.Id == id);
+            var employee = await mvcdemoDbContext.Employees.FirstOrDefaultAsync(x => x.Id == id);
+            
+            if(employee != null)
+            {
+                var viewModel = new UpdateEmployeeViewModel()
+                {
+                    Id = employee.Id,
+                    Name = employee.Name,
+                    Email = employee.Email,
+                    Salary = employee.Salary,
+                    Department = employee.Department,
+                    DateOfBirth = employee.DateOfBirth
+                };
+                return await Task.Run(() => View("View", viewModel));
+            }
 
-            return View(employee);
+            return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public async Task<IActionResult> View(UpdateEmployeeViewModel model)
+        {
+            var employee = await mvcdemoDbContext.Employees.FindAsync(model.Id);
+            
+            if(employee != null)
+            {
+                employee.Name = model.Name;
+                employee.Email = model.Email;
+                employee.Salary = model.Salary;
+                employee.Department = model.Department;
+                employee.DateOfBirth = model.DateOfBirth;
+
+                await mvcdemoDbContext.SaveChangesAsync();
+
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(UpdateEmployeeViewModel model)
+        {
+            var employee = await mvcdemoDbContext.Employees.FindAsync(model.Id);
+
+            if(employee != null)
+            {
+                mvcdemoDbContext.Employees.Remove(employee);
+                await mvcdemoDbContext.SaveChangesAsync();
+
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }
